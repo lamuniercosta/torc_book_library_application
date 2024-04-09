@@ -2,7 +2,7 @@
 
 To run the application, follow these steps:
 
-1. From the solution root folder, run the following command:
+1. From the Backend folder, run the following command:
 
    ```bash
    docker-compose up
