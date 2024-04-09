@@ -14,11 +14,6 @@ public class MigrationService
 
     public void Configure()
     {
-        var seedScriptPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Scripts", "Seed.sql");
-        
-        var seedScript = File.ReadAllText(seedScriptPath);
-        
         _context.Database.Migrate();
-        _context.Database.ExecuteSqlRaw(seedScript);
     }
 }

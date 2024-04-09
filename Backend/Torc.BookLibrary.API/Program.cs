@@ -9,15 +9,14 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddTransient(typeof(BookController));
         DependencyInjectionService.Configure(builder.Services, builder.Configuration);
         AutoMapperService.Configure(builder.Services);
         SwaggerService.Configure(builder.Services);
         var app = builder.Build();
         
-#if MIGRATION
         var migrationService = (MigrationService)app.Services.GetRequiredService(typeof(MigrationService));
         migrationService.Configure();
-#endif
 
         SwaggerService.ConfigureServices(app);
 

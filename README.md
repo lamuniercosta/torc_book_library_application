@@ -1,1 +1,11 @@
-# torc_book_library_application
+### How to Run
+
+To run the application, follow these steps:
+
+1. From the solution root folder, run the following command:
+
+   ```bash
+   docker-compose up
+   ```
+
+2. The API should be available at http://localhost:5000/swagger.

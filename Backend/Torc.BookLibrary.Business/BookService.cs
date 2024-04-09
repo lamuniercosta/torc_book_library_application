@@ -26,7 +26,7 @@ public class BookService : IBookService
     private static SqlBuilder.Template CreateDynamicQuery(string fieldName, string searchValue)
     {
         var builder = new SqlBuilder()
-            .Where($"{fieldName} = @SearchValue", new { fieldName = searchValue });
+            .Where($"{fieldName} = @SearchValue", new { searchValue });
         return builder.AddTemplate(SqlQueries.GetBooks);
     }
 }
